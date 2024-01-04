@@ -18,3 +18,5 @@
 2. Set up Firebase Account
 3. Use Firebase console to create a project
 4. Link Firebase project with FriendlyChat
+
+### 2. 

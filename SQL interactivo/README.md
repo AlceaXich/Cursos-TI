@@ -38,3 +38,19 @@ Ejemplo:
 
 ### Utilizando el operador "menor o igual que" en una condición
 
+### Seleccionando filas bajo una condición de igualdad (tipo de dato string)
+- En SQL, para comparar textos debemos utilizar comillas simples ('') o comillas dobles ("").
+
+Ejemplo:
+`SELECT * FROM productos WHERE nombre = 'Pantalón';`
+`SELECT * FROM productos WHERE nombre = "Silla de Oficina";`
+
+### Seleccionando filas bajo una condición de igualdad (tipo de dato booleano true)
+
+Ejemplo:
+`SELECT * FROM usuarios WHERE status = 1;`
+`SELECT * FROM usuarios WHERE status = true;`
+
+### Seleccionando filas bajo una condición de igualdad (tipo de dato booleano false)
+Ejemplo:
+`SELECT * FROM productos WHERE destacado = false;`

@@ -17,3 +17,5 @@
 2. Verificar si fnm instalo correctamente: `$ fnm --version`
 3. Intalar la último LTS (Long-Term Support) version de Node: `$ fnm install --lts`
 4. Veificar si Node esta instalado: `$ node -v`
+
+**Nota:** Para "fijar" una versión específica de Node.js para su proyecto, debe crear un archivo .nvmrc en la raíz del directorio de su proyecto.

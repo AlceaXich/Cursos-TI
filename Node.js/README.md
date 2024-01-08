@@ -19,3 +19,7 @@
 4. Veificar si Node esta instalado: `$ node -v`
 
 **Nota:** Para "fijar" una versión específica de Node.js para su proyecto, debe crear un archivo .nvmrc en la raíz del directorio de su proyecto.
+### Empezando un proyecto Node
+1. Para empezar un Node project, se necesita crear **package.json**, usando el siguiente comando: `npm init`.
+2. Servir los archivos de una carpeta, usando serve: `npm install serve`.
+3. Crear una nueva carpeta llamada static en el directorio de su proyecto: `mkdir static`.

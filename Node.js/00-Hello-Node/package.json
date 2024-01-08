@@ -1,0 +1,25 @@
+{
+  "name": "00-hello-node",
+  "version": "1.0.0",
+  "description": "First project with Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlceaXich/Cursos-TI.git#main"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "AlceaXich (Shirley Oxa)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlceaXich/Cursos-TI/issues"
+  },
+  "homepage": "https://github.com/AlceaXich/Cursos-TI/tree/main#readme",
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}

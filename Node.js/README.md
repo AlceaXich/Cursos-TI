@@ -20,6 +20,16 @@
 
 **Nota:** Para "fijar" una versión específica de Node.js para su proyecto, debe crear un archivo .nvmrc en la raíz del directorio de su proyecto.
 ### Empezando un proyecto Node
-1. Para empezar un Node project, se necesita crear **package.json**, usando el siguiente comando: `npm init`.
-2. Servir los archivos de una carpeta, usando serve: `npm install serve`.
-3. Crear una nueva carpeta llamada static en el directorio de su proyecto: `mkdir static`.
+1. Para empezar un Node project, se necesita crear **package.json**, usando el siguiente comando: 
+   * `npm init`.
+2. Servir los archivos de una carpeta, usando serve: 
+   * `npm install serve`.
+3. Crear una nueva carpeta llamada static en el directorio de su proyecto:
+   * `mkdir static`.
+4. Crear 2 archivos dentro de la carpeta static:
+   * index.html
+   * app.js
+5. Navegar hasta el directorio que contiene la carpeta static dentro de la terminal.
+6. Para iniciar el servidor de archivos:
+   * `npx serve -p 5050 static`
+7. Navegar a: http://localhost:5050

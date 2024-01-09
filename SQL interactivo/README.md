@@ -54,3 +54,53 @@ Ejemplo:
 ### Seleccionando filas bajo una condición de igualdad (tipo de dato booleano false)
 Ejemplo:
 `SELECT * FROM productos WHERE destacado = false;`
+
+### Utilizando dos condiciones con operador "and"
+- La claúsula WHERE se puede combinar con el operador AND para juntar múltiples condiciones en una consulta SQL. 
+
+Ejemplo:
+`SELECT * FROM usuarios WHERE nombre = 'María' AND email = 'mariagarcia@hotmail.com';`
+`SELECT * FROM productos WHERE agotado = true AND precio > 100;`
+
+### Utilizando operador "OR"
+- Cuando se usa el operador OR, al menos una de las condiciones debe ser verdadera para que el registro se incluya en el resultado.
+
+Ejemplo:
+`SELECT  * FROM productos WHERE precio > 1000 OR descuento = 20;`
+`SELECT * FROM clientes WHERE ciudad = 'Madrid' OR saldo < 0;`
+
+### Seleccionando fecha
+- Las fechas se guardan en un formato YYYY-MM-DD, indicando primero el año en 4 dígitos, luego el mes con dos dígitos y finalmente el día con dos dígitos. 
+  - Un ejemplo de una fecha en este formato sería 2022-01-01
+
+Ejemplo:
+`SELECT * FROM productos WHERE fecha_de_creación > '2021-05-01';`
+
+### Seleccionando datos entre dos valores con "between"
+
+- El operador BETWEEN se utiliza para seleccionar registros cuyos valores se encuentren dentro de un rango específico.
+
+Ejemplo:
+`SELECT * FROM productos WHERE stock BETWEEN 20 AND 30;`
+
+### Seleccionando filas con "like"
+- Supongamos que queremos buscar todos los usuarios cuyo nombre empiece con la letra 'J' en la tabla de usuarios. El símbolo '%' es un comodín que representa cualquier cantidad de caracteres adicionales.
+
+Ejemplo:
+`select * from usuarios where apellido like 'Ma%';`
+
+### Seleccionando con comodin al principio
+- El símbolo '%' es un comodín que representa cualquier cantidad de caracteres adicionales. En este caso, estamos utilizando '%' antes de la letra 's' para indicar que queremos buscar cualquier nombre que termine con 's' y tenga cualquier número de caracteres adicionales antes de ella.
+
+Ejemplo:
+`select * from usuarios where nombre like '%o';`
+
+### Seleccionando registros sin valores nulos
+- Para seleccionar todos los valores no nulos utilizaremos IS NOT NULL.
+
+Ejemplo:
+`select * from productos where descuento is not null;`
+
+### Seleccionando registros con valores nulos
+Ejemplo:
+`select * from usuarios where email is null;`

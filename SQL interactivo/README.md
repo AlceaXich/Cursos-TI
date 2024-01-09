@@ -104,3 +104,25 @@ Ejemplo:
 ### Seleccionando registros con valores nulos
 Ejemplo:
 `select * from usuarios where email is null;`
+
+## denando resultados (orden y limit)
+  ### Ordenando filas 
+    - ORDER BY se utiliza para ordenar los resultados de una consulta según una o más columnas. Por defecto, se ordena de forma ascendente.
+    - Es importante tener en cuenta que las claúsulas tienen que especificarse justo en este orden:
+    * SELECT
+    * FROM
+    * ORDER BY
+    - Ejemplo:
+      * `select * from usuarios order by nombre;`
+
+  ### Ordenando filas asc explicito
+   - Con la claúsula ORDER BY podemos especificar la dirección de los resultados. Se puede ordenar en orden ascendente (ASC) o descendente (DESC).
+   - Ejemplo:
+     * `select * from usuarios order by nombre asc;`
+
+  ### Ordenando filas desc
+   - La cláusula ORDER BY se utiliza para ordenar los resultados de una consulta. Por defecto el orden es ascendente, pero se puede especificar que sea descendente utilizando la palabra clave DESC.
+   - Ejemplo:
+     * `select precio from productos order by  precio desc;` 
+
+

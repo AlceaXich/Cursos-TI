@@ -4,7 +4,8 @@
   "description": "First project with Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "static": "serve -p 5050 static",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

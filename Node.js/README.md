@@ -39,3 +39,16 @@
 7. Navegar a: http://localhost:5050
 
 ![Resultado del proyecto node 00-Hello-node](./00-Hello-Node/assets/img/result-web-0.png)
+
+### Creando comandos de shell de NPM
+1. Para crear comandos de shell personalizados de Node Package Manager (NPM), se definen dentro del archivo **package.json**, específicamente en el objeto scripts.
+
+2. En el script se encuentra los siguientes comandos:
+   * **static** ejecuta serve -p 5050 static, que empieza el archivo servidor en el port 5050. 
+   * **test**  muestra un mensaje de error.
+
+3. Para ejecutar los comandos del script, dentro del terminal, se usa el siguiente comando, junto con el nombre del script:
+   * `npm run static `
+
+![Ejecucion del npm run static](./00-Hello-Node/assets/img/script.png)
+4. 

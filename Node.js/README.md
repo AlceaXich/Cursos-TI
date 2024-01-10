@@ -51,4 +51,18 @@
    * `npm run static `
 
 ![Ejecucion del npm run static](./00-Hello-Node/assets/img/script.png)
-4. 
+
+### Creando nuestro servicio web simulado 
+   1. Crear un archivo **server.mjs** en la parte superior de la carpeta **static**. Asi deberia ser la estrutura del proyecto:
+      - package-lock.json
+      - package.json
+      - server.mjs
+      - static
+        - app.js
+        - index.html 
+   2. Iniciamos el servicio simulado ejecutando en el terminal del directorio del proyecto:
+      * `node server.mjs` 
+   3. En otro terminar, usando npm:
+      *  `npm run static`
+   4. Navegamos a http://localhost:5050 en el navegador.
+![Servicio web simulado](./00-Hello-Node/assets/img/server.png)

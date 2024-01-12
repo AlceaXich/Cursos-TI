@@ -66,3 +66,22 @@
       *  `npm run static`
    4. Navegamos a http://localhost:5050 en el navegador.
 ![Servicio web simulado](./00-Hello-Node/assets/img/server.png)
+
+### Simulando Rutas GET
+   1. Ahora, creemos un servicio web simulado usando Fastify para manejar las solicitudes GET.
+   2. Eliminar el archivo server.mjs que creamos anteriormente:
+      * `rm server.mjs`
+   3. Modificar **static/index.html**.
+   4. Modificar **static/app.js**, aqui se reemplazo el button-click.
+   5. La función **populateProduct** ahora acepta un argumento de category y la llamada para recuperar se ha actualizado a:
+      * const res = await fetch(`$(API)/${category}`)
+        - GET http://localhost:5050/electronics 
+        - GET http://localhost:5050/confectionery
+   6. Crearemos, un servicio simulado usando Fastify framework.
+   7. Crear el folder **mock-srv ** dentro del proyecto.
+      * `mkdir mock-srv`
+      * `cd mock-srv`
+   8. Ahora intalamos el framework Fastity y su interfaz de linea de comandos:
+      * `npm add fastity fastity-cli`
+   9.  
+1.  

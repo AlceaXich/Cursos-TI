@@ -84,4 +84,6 @@
    8. Ahora intalamos el framework Fastity y su interfaz de linea de comandos:
       * `npm add fastity fastity-cli`
    9.  
-1.  
+
+### Creando rutas POST
+1. Actualizamos el **static/index.html**.

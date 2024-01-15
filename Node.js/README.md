@@ -84,6 +84,9 @@
    8. Ahora intalamos el framework Fastity y su interfaz de linea de comandos:
       * `npm add fastity fastity-cli`
    9.  
+## 2. Going real-time
 
-### Creando rutas POST
-1. Actualizamos el **static/index.html**.
+### Mejora de un servidor HTTP con WebSockets (1)
+   1. WebSockets permite la comunicación bidireccional entre navegadores y servidores. El protocolo WebSocket se construye sobre el protocolo HTTP. 
+   2. Permite conexiones de larga duración que comienzan como conexiones HTTP normales y luego se actualizan a conexiones tipo socket.
+   3. Actualizar **static/index.html**

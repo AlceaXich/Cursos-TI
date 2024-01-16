@@ -1,6 +1,10 @@
 const express = require('express');
 const req = require('express/lib/request');
 const app = express();
+const connectDB = require('./config/db');
+
+connectDB();
+
 //Display all fruits
 app.get('/fruits', (req,res) =>{
     res.json({ msg: 'showing all red fruits'});

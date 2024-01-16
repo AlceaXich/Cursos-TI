@@ -91,4 +91,7 @@
    2. Permite conexiones de larga duración que comienzan como conexiones HTTP normales y luego se actualizan a conexiones tipo socket.
    3. Actualizar **static/index.html**
    4. Ahora, actualizar el archivo **static/app.js** para establecer una conexión WebSocket del lado del cliente a nuestro servidor.
-   5. 
+   5. ActuaLizar el archivo **mock-srv/routes/index.mjs**
+
+### Comunicación bidireccional en tiempo real
+   1 

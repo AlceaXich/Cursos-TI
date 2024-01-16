@@ -2,17 +2,26 @@ const express = require('express');
 const req = require('express/lib/request');
 const app = express();
 const connectDB = require('./config/db');
+const Fruit = require('./models/fruitModel');
 
 connectDB();
 
 //Display all fruits
-app.get('/fruits', (req,res) =>{
-    res.json({ msg: 'showing all red fruits'});
+app.get('/fruits', async (req,res) =>{
+    try {
+        const fruits = await Fruit.find({});
+        res.json(fruits);
+    } catch (error) {
+        console.log(error);
+        
+    }
 });
+
 //Display fruits by id
 app.get('/fruits/:fruitsId', (req,res) => {
     res.json({ msg: 'fruit id is ' + req.params.fruitsId });
 });
+
 //Create new fruit
 app.post('/fruits', (req,res) => {
     res.json({ msg: 'Creating fruits with post' });

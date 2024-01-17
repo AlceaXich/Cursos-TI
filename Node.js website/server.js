@@ -5,6 +5,8 @@ const connectDB = require('./config/db');
 const Fruit = require('./models/fruitModel');
 
 connectDB();
+//middleware
+app.use(express.json);
 
 //Display all fruits
 app.get('/fruits', async (req,res) =>{
@@ -18,23 +20,50 @@ app.get('/fruits', async (req,res) =>{
 });
 
 //Display fruits by id
-app.get('/fruits/:fruitsId', (req,res) => {
-    res.json({ msg: 'fruit id is ' + req.params.fruitsId });
+app.get('/fruits/:fruitsId', async(req,res) => {
+    try {
+        const fruit = await Fruit.findById(req.params.fruitsId);
+        res.json(fruit);
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 //Create new fruit
-app.post('/fruits', (req,res) => {
-    res.json({ msg: 'Creating fruits with post' });
+app.post('/fruits', async(req,res) => {
+    try {
+        await Fruit.create({
+            fruitname: req.body.fruitname,
+            name: req.body.name,
+        });
+        res.json({ msg: 'fruit created successfully'});
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 //Edit fruit with id
-app.put('/fruits/:fruitsId', (req,res) => {
+app.put('/fruits/:fruitsId', async(req,res) => {
+    try {
+        await Fruit.findByIdAndUpdate(req.params.fruistid, {
+            fruitname: req.body.fruitname,
+            name: req.body.name,
+        });
+        res.json({msg: 'fruit updated successfully'});
+    } catch (error) {
+        console.log(error);
+    }
     res.json({ msg: 'Editing fruits ' + req.params.fruitsId });
 });
 
 //Delete fruits by id
-app.delete('/fruits/:fruitsId', (req,res) => {
-    res.json({ msg: 'Deleting fruits ' + req.params.fruitsId });
+app.delete('/fruits/:fruitsId', async(req,res) => {
+    try {
+        await Fruit.findByIdAndDelete(req.params.fruitsId);
+        res.json({ mgs: 'Fruit deleted'});
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 //Welcome to index

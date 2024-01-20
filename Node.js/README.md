@@ -92,6 +92,14 @@
    3. Actualizar **static/index.html**
    4. Ahora, actualizar el archivo **static/app.js** para establecer una conexión WebSocket del lado del cliente a nuestro servidor.
    5. ActuaLizar el archivo **mock-srv/routes/index.mjs**
+## 3. Working with CLI
 
-### Comunicación bidireccional en tiempo real
-   1 
+   1. Vamos a crear una herramienta de línea de comandos simple que realiza una solicitud POST al punto final /orders/{ID}.
+   2. Creamos una carpeta en la raiz del proyecto, navegamos a la carpeta y luego inicializamos Node.js package:
+      * `mkdir my-cli`
+      * `cd my-cli`
+      * `npm init -y`
+   3. Usaremos el módulo "got" de NPM, que ofrece una API fácil de usar para desarrolladores para realizar solicitudes HTTP.
+      * `npm install got `
+   4. Crear detro my-cli el archivo cmd.js
+   

@@ -124,5 +124,16 @@ Ejemplo:
    - La cláusula ORDER BY se utiliza para ordenar los resultados de una consulta. Por defecto el orden es ascendente, pero se puede especificar que sea descendente utilizando la palabra clave DESC.
    - Ejemplo:
      * `select precio from productos order by  precio desc;` 
+  ### Ordenando con nulos al final
+    - ORDER BY junto con NULLS FIRST o NULLS LAST para especificar cómo queremos que se ordenen las filas con valores nulos.
+    - Ejemplo:
+      * `select * from productos order by precio nulls last;`
+  ### Combinaciones de orden
+    - Se puede ordenar en función de múltiples columnas
+    - Ejemplo:
+      * `select * from empleados order by salario asc, nombre asc;` 
+  ### Combinaciones de orden asc y desc
+    - Ejemplo:
+      * `select * from productos order by stock desc, color asc;` 
 
 

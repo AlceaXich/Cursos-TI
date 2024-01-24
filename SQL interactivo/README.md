@@ -105,7 +105,7 @@ Ejemplo:
 Ejemplo:
 `select * from usuarios where email is null;`
 
-## denando resultados (orden y limit)
+## Ordenando resultados (orden y limit)
   ### Ordenando filas 
     - ORDER BY se utiliza para ordenar los resultados de una consulta según una o más columnas. Por defecto, se ordena de forma ascendente.
     - Es importante tener en cuenta que las claúsulas tienen que especificarse justo en este orden:
@@ -136,4 +136,12 @@ Ejemplo:
     - Ejemplo:
       * `select * from productos order by stock desc, color asc;` 
 
-
+## Limit
+  ### Limitando la cantidad de resultados
+    - La cláusula LIMIT se utiliza para limitar la cantidad de resultados devueltos por una consulta.
+    - Ejemplo: `select * from usuarios limit 3;`
+  ### Obtener los primeros alumnos con mejor nota
+    - La combinación de las cláusulas ORDER BY y LIMIT nos permite obtener el valor o valores máximos de una columna en una tabla.
+    - Ejemplo: ` select puntaje from puntajes order by puntaje desc limit 1; ` 
+  ### Obtener el nombre del concierto con más entradas vendidas
+    - Ejemplo: `select nombre_concierto, entradas_vendidas from conciertos order by entradas_vendidas desc limit 1;`

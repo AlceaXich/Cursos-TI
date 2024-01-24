@@ -145,3 +145,22 @@ Ejemplo:
     - Ejemplo: ` select puntaje from puntajes order by puntaje desc limit 1; ` 
   ### Obtener el nombre del concierto con más entradas vendidas
     - Ejemplo: `select nombre_concierto, entradas_vendidas from conciertos order by entradas_vendidas desc limit 1;`
+## Operaciones con string
+  ### Transformando un string a mayúsculas
+    - Para transformar un string a mayúsculas en SQLITE podemos utilizar la función UPPER().
+    - Ejemplo: `select upper(email) as email_upper from usuarios;`
+  ### Trasformando un string a minúsculas
+    - La función LOWER() en SQLite se utiliza para convertir todos los caracteres de un texto a minúsculas
+    - Ejemplo: `select lower(email) as email_lower from usuarios;`
+  ### Quitando espacios en blanco de un string
+    - En SQLite la función TRIM() se utiliza para eliminar los espacios en blanco iniciales y finales de un string.
+    - Ejemplo: `select trim(nombre), trim(email) from usuarios;`
+  ### Combinando funciones
+    - Se pueden combinar funciones lower y trim.
+    - Ejemplo: `select lower(trim(nombre)) as nombre_limpsio, lower(trim(apellido)) as apellido_limpio, lower(trim(email)) as email_limpio from usuarios;`
+  ### Obteniendo el largo de un string
+    - En SQL, podemos utilizar la función LENGTH() para obtener la longitud de una cadena de caracteres. 
+    - Ejemplo: `select length(apellido) from usuarios;`
+  ###
+  ###
+  ###

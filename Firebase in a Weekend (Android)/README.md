@@ -4,8 +4,7 @@
 - Udacity
 - 
 ### Tiempo de duracion
-- Fecha inicio: 06-01-24
-- Fecha final: 08-01-24
+- Fecha inicio: 
 
 ### Recursos
 - Git: https://github.com/udacity/and-nd-firebase

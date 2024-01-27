@@ -161,6 +161,14 @@ Ejemplo:
   ### Obteniendo el largo de un string
     - En SQL, podemos utilizar la función LENGTH() para obtener la longitud de una cadena de caracteres. 
     - Ejemplo: `select length(apellido) from usuarios;`
-  ###
-  ###
-  ###
+  ### Obteniendo el nombre mas largo de la tabla
+    - `select length(email) from usuarios order by length(email) desc limit 3;`
+  ### Ordenando todos los datos y la funcion
+    - `select email,length(email)  from usuarios order by length(email) desc limit 3;`
+  ### Concatenar strings
+    - `select producto || '-' || marca as marca_producto from productos;``
+  ### Seleccionando caracteres de un string con SUBSTR
+    - La función SUBSTR() se utiliza para seleccionar una determinada cantidad de caracteres de un string: SUBSTR( string, inicio, largo )
+    - select substr(apellido,1,3) as primeras_letras from usuarios;
+    - select substr(apellido,2,3) as tres_caracteres_del_apellido from usuarios where nombre = 'María';
+  ### 

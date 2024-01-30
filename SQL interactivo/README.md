@@ -170,5 +170,44 @@ Ejemplo:
   ### Seleccionando caracteres de un string con SUBSTR
     - La función SUBSTR() se utiliza para seleccionar una determinada cantidad de caracteres de un string: SUBSTR( string, inicio, largo )
     - select substr(apellido,1,3) as primeras_letras from usuarios;
-    - select substr(apellido,2,3) as tres_caracteres_del_apellido from usuarios where nombre = 'María';
-  ### 
+    - select substr(apellido,2,3) as tres_caracteres_del_apellido from usuarios where nombre = 'Marí## 
+
+## Operaciones con fechas
+  ### Obteniendo la fecha de hoy
+    - Con la función DATE() podemos obtener la fecha de hoy.
+    - Ejemplo: select descripcion from tareas where fecha_limite=date();
+  ### Obteniendo la fecha de mañana
+    - EN SQL es posible sumar fechas para obtener fechas futuras. 
+    - Ejemplo: select * from tareas where fecha_limite = Date('now', '1 day');
+  ### Obteniendo la fecha de ayer
+    - EN SQL es posible restar fechas para obtener fechas anteriores.
+    - Ejemplo: select monto from ganancias where fecha = date('now', '-1 day');
+  ### Extraccion del año
+    -
+    - Ejemplo: select monto, strftime('%Y', fecha_venta) as año_venta from ventas;
+  ### Extracción del mes
+    -
+    - Ejemplo: select monto, strftime('%m',fecha_venta) as mes_venta, strftime('%Y', fecha_venta) as año_venta from ventas;
+  ### Extracción del mes y año
+    -
+    - Ejemplo: select monto, strftime('%Y-%m',fecha_venta) as año_mes from ventas;
+  ### Extracciones y where
+    -
+    - Ejemplo: select * from ventas where strftime('%Y',fecha_venta) = '2015';
+## Funciones de agregación
+  ### El mayor valor de una columna
+    - En SQL hay funciones que nos permiten ejecutar operaciones sobre un conjunto de resultados. Estas reciben el nombre de funciones de agregación.
+    - Ejemplo: select max(edad) from empleados;
+  ### El menor valor de una columna
+    - Otra función de agregación frecuentemente utilizada es MIN(). Esta función toma como argumento el nombre de la columna y devuelve el valor más pequeño en esa columna.
+    - Ejemplo: select min(sueldo) from empleados;
+  ### Suma de elementos en una columna
+    - Es importante tener en cuenta que la columna sobre la cual se aplica la función SUM() debe contener valores numéricos.
+    - Ejemplo: select sum(sueldo) from empleados;
+  ### Promedio de una columna
+    - select avg(sueldo) from empleados;
+  ### Contando elementos en una tabla
+    - select count(*) from empleados;
+  ###
+    -
+  ###

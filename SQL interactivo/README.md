@@ -208,6 +208,13 @@ Ejemplo:
     - select avg(sueldo) from empleados;
   ### Contando elementos en una tabla
     - select count(*) from empleados;
-  ###
-    -
-  ###
+  ### Ejercicio 1 : Funciones de agregacion con where
+    - select sum(sueldo) from empleados where edad > 27;
+  ### Ejercicio 2 : Funciones de agregacion con where
+    - SELECT AVG(sueldo) from empleados WHERE sueldo > 50000;
+  ### Ejercicio 3 : Funciones de agregacion con where
+    - select count(*) from empleados  where departamento = 'Marketing';
+  ### Ejercicio 4 : Funciones de agregacion con where
+    - select count(*) from empleados where departamento = 'Finanzas' or departamento = 'Marketing';
+  ### Conteo con condiciones con string
+    - select count(*) from usuarios where nombre like '%a';

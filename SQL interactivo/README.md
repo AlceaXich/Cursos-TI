@@ -235,5 +235,30 @@ Ejemplo:
   ### Distinct con múltiples columnas
     - select distinct categoria, precio from productos;
 
+## Introducción a grupos
+  ### Agrupando valores con GROUP BY
+  - La cláusula GROUP BY es una poderosa herramienta en SQL que se utiliza para agrupar filas con valores idénticos en una o varias columnas específicas, permitiendo realizar operaciones de agregación en cada grupo.
+  - Ejemplo: select correo as correo_unico from usuarios group by correo;
+  ### Agrupar y contar 
+  - GROUP BY es comúnmente utilizada junto con funciones de agregación como COUNT, MAX, MIN, SUM y AVG para obtener información resumida de un conjunto de datos.
+  - Ejemplo:  select correo, count(correo) as repeticiones from usuarios group by correo;
+  ### Ejercitando agrupar y contar
+  - select departamento, count(nombre) as cantidad_empleados from empleados group by departamento;
+  ### Agrupar y sumar
+  - select categoria, sum(monto) as monto_total from ventas group by categoria;
+  ### Agrupar y promediar
+  - select nombre_completo, avg(nota) as promedio_notas from estudiantes group by nombre_completo;
+  ### Máximo por grupo
+  - select categoria, max(monto) as monto_mas_alto from ventas group by categoria;
+  ### Mínimo por grupo
+  - select categoria, min(monto) as monto_mas_bajo from ventas group by categoria;
+  ### Funciones de agregación y fechas
+  - select sum(monto) as suma_ventas, strftime('%m', fecha_venta) as mes from ventas group by strftime('%m',fecha_venta);
+  ### Ejercitando funciones de agregación con fechas
+  - select strftime('%m', fecha_inscripcion) as mes, count(strftime('%m', fecha_inscripcion)) as cantidad_usuarios from inscripciones group by strftime('%m', fecha_inscripcion);
+  ### Agrupando sin indicar el nombre de las columnas
+    - select correo, count(correo) as repeticiones from usuarios group by correo order by correo asc;
+  ### Agrupando por múltiples columnas
+    - select correo, materia, avg(nota) as promedio_notas from estudiantes group by correo,materia;
 
 

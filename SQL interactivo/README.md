@@ -218,3 +218,22 @@ Ejemplo:
     - select count(*) from empleados where departamento = 'Finanzas' or departamento = 'Marketing';
   ### Conteo con condiciones con string
     - select count(*) from usuarios where nombre like '%a';
+    -
+## Distinc
+  ### Seleccionar filtrando datos repetidos
+    - En SQL el keyword DISTINCT nos permite filtrar los resultados repetidos de una consulta.
+    - Ejemplo: SELECT DISTINCT color AS color_unico from colores;
+  ### Seleccionando correos únicos
+    - select distinct correo as correo_unico from usuarios;
+  ### Seleccionar distintos años
+    - select distinct strftime('%m', fecha_venta) as mes_unico from ventas;
+  ### Contar los valores distintos
+    - Se puede combinar las funciones COUNT y DISTINCT de la siguiente manera:COUNT(DISTINCT columna)
+    - Ejemplo: select count(distinct telefono) as telefonos_unicos from usuarios;
+  ### Contando correos únicos
+    - select count(distinct correo) as correos_cant from usuarios;
+  ### Distinct con múltiples columnas
+    - select distinct categoria, precio from productos;
+
+
+

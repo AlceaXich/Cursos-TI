@@ -260,5 +260,20 @@ Ejemplo:
     - select correo, count(correo) as repeticiones from usuarios group by correo order by correo asc;
   ### Agrupando por múltiples columnas
     - select correo, materia, avg(nota) as promedio_notas from estudiantes group by correo,materia;
+## Having
+  ### Introducción a having
+    - HAVING se emplea para filtrar los resultados de una consulta que involucra funciones agregadas. 
+    - HAVING permite aplicar condiciones de filtrado a los resultados de funciones como COUNT, MAX, MIN, SUM y AVG después de que se han agrupado los datos con la cláusula GROUP BY.
+    - Ejemplo: **select strftime('%m',Fecha_Inscripcion) as mes, count(Fecha_Inscripcion) as cantidad_usuarios from inscripciones group by strftime('%m', Fecha_Inscripcion) having cantidad_usuarios = 1;**
+  ### Buscando  duplicados
+    - **select correo, count(correo) as cuenta_correos from correos_corporativos group by correo having cuenta_correos > 1;**
+  ### Having y cuenta
+    - **select count(nombre) as cantidad_de_usuarios, departamento from empleados group by departamento having cantidad_de_usuarios > 1; **
+  ### Having y promedio
+    - **select email, avg(notas) as promedio_notas from notas group by email having promedio_notas >= 50;**
+  ### Having y order
+    - **select producto, sum(cantidad) as cantidad_total from ventas group by producto having cantidad_total > 1000 order by cantidad_total desc;**
+  ### Having y order 2
+    - **select departamento, avg(salario) as salario_Promedio from empleados group by departamento order by departamento desc;**
 
 

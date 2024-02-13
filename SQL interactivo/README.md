@@ -276,4 +276,29 @@ Ejemplo:
   ### Having y order 2
     - **select departamento, avg(salario) as salario_Promedio from empleados group by departamento order by departamento desc;**
 
+## Sub-consultas
+  ### Introducción a subconsultas
+    - Las subconsultas o "subqueries", nos permiten utilizar los resultados de una consulta dentro de otra consulta.
+    - Ejemplo: selecciona todos los registros cuyo sueldo sea menor o igual al promedio.
+    `select * from empleados where sueldo <= (select avg(sueldo) from empleados);`
+  ### Subconsultas y where parte 1
+    - Selecciona toda la información de los registros que sean mayores al promedio del departamento de finanzas.
+    - Ejemplo:
+      `select * from empleados where sueldo > (select avg(sueldo) from empleados where departamento = 'Finanzas');`
+  ### Subconsultas y where parte 2
+    - Ejemplo: Utilizando los datos de la tabla empleados, selecciona todos los empleados cuyo sueldo sea mayor al empleado que tiene el mayor sueldo del departamento de finanzas.
+    - `select * from empleados where sueldo > (select sueldo from empleados where departamento = 'Finanzas');`
+  ### Subconsultas y where parte 3
+    - Ejemplo: Selecciona todos los registros superiores al promedio de nota.
+    - `select * from notas where notas > (select avg(notas) from notas);`
+  ### Subconsultas con IN
+    - El operador IN es un operador muy útil en subconsultas
+    - Ejemplo:
+      - `select nombre from estudiantes where estudiante_id in (select estudiante_id from promedios where promedio_notas > 50);`
+  ### Subconsultas con IN parte 2
+    - select nombre as nombres_seleccionados from libros where libro_id in (select libro_id from valoraciones where valoracion_promedio > 4);
+  ### Subconsultas con IN parte 3
+    - select nombre as nombres_pacientes from pacientes where paciente_id in (select paciente_id from consultas where fecha_consulta < '2023-05-16');
+  ### 
+
 

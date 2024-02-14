@@ -299,6 +299,34 @@ Ejemplo:
     - select nombre as nombres_seleccionados from libros where libro_id in (select libro_id from valoraciones where valoracion_promedio > 4);
   ### Subconsultas con IN parte 3
     - select nombre as nombres_pacientes from pacientes where paciente_id in (select paciente_id from consultas where fecha_consulta < '2023-05-16');
-  ### 
+  ### Subconsultas en el from
+    - Una subconsulta en el FROM tiene la siguiente forma. -> SELECT * FROM (SELECT * FROM tabla1)
+    - Ejemplo: 
+      - **select avg(total_ventas) as promedio_ventas from ( select empleado_id, sum(monto) as total_ventas from ventas group by empleado_id)**
+  ### Subconsultas en el FROM parte2
+    - `select avg(total_goles) as promedio_goles from (select jugador_id, sum(goles) as total_goles from goles group by jugador_id)`
+
+## Combinación de consultas
+  ### Introducción a la cláusula unión de SQL
+    - La sintaxis básica de UNION es la siguiente:
+  `SELECT columna1, columna2
+    FROM tabla1 
+    UNION SELECT columna1, columna2
+    FROM tabla2; `
+    - Ejemplo:
+    - select nombre as nombres from estudiantes union select nombre from profesores;
+  ### Eliminar duplicados con union
+    - La principal característica de UNION es que elimina las filas duplicadas del resultado final.
+    - select email as correos_unicos from usuarios union select email from clientes;
+  ### Union vs Union all
+    - UNION ALL selecciona todos los registros incluido los dupplicado
+    - Ejemplo: select * from empleados1 union all select * from empleados2;
+  ### Introducción a intersección
+    - El operador INTERSECT se utiliza para combinar dos SELECT y devolver los resultados que se encuentran en ambas consultas.
+    - Ejemplo: select cliente from lista1 intersect select cliente from lista2;
+  ### El operador Except
+    - El operador EXCEPT en SQL se utiliza para devolver todas las filas en la primera consulta que no están presentes en la segunda consulta. En otras palabras, EXCEPT devuelve solo las filas, que son parte de la primera consulta pero no de la segunda consulta.
+    - Ejemplo: select nombre from empleados except select nombre from gerentes;
+
 
 

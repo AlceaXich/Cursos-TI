@@ -327,6 +327,59 @@ Ejemplo:
   ### El operador Except
     - El operador EXCEPT en SQL se utiliza para devolver todas las filas en la primera consulta que no están presentes en la segunda consulta. En otras palabras, EXCEPT devuelve solo las filas, que son parte de la primera consulta pero no de la segunda consulta.
     - Ejemplo: select nombre from empleados except select nombre from gerentes;
+  
+## Inserción de registros
+  ### Añadir un registro en una tabla
+    - La instrucción INSERT la acompañaremos de las palabra clave INTO para especificar en qué tabla queremos insertar un valor y VALUES para especificar los valores que queremos insertar.
+    - Ejemplo: ***insert into usuarios values(7,'Lucía','Sánchez','luciasanchez@outlook.com','555-5555');***
 
+  ### Añadir un registro en una tabla parte 2
+    - Ejemplo: ***insert into productos values (7,'Bolso',1000,10);***
+  ### Especificando valores nulos
+    - A la hora de insertar datos, si hay un valor que no conocemos, o es un valor que no queremos especificar, podemos ingresar un valor nulo.
+    - Ejemplo: ***insert into productos values (7,'Bolso',1000,null);***
+  ### Añadir un registro especificando columnas
+    - Ejemplo: ***insert into usuarios (id, apellido, nombre, telefono, email) values (7,'Sánchez','Lucía','333-3333','luciasanchez@outlook.com');***
+  ### Añadir un registro especificando solo algunas columnas
+    - Ejemplo: ***insert into productos (nombre,stock) values ('Bolso',10);***
+  ### Añadir fecha de hoy a un registro
+    - Si queremos insertar la fecha actual al momento de crear un registro, podemos utilizar la función CURRENT_DATE para obtenerla.
+    - Ejemplo: ***insert into productos (nombre, stock, fecha) values ('bolso',10,current_date);***
+  ### Añadiendo fecha y hora al insertar
+    - Si queremos insertar una fecha cualquiera al momento de crear un registro, simplemente debemos hacerlo especificando la fecha en el formato esperado.
+    - Ejemplo: ***insert into productos (nombre,stock,fecha) values ('Bolso',10,'2023-01-01');***
 
+  ### Añadir múltiples valores
+    - Podemos ingresar varios registros en una tabla en una sola sentencia INSERT.
+    - Ejemplo: ***insert into ventas values('Gorro', 5,1000),('Camiseta',10,500),('Pantalón',8,1500);***
+  ### Crear un registro con un campo autoincremental
+    - Ejemplo: ***insert into empleados (nombre, apellido) values ('Jane','Smith');***
+  ### Añadir un registro asumiendo un valor por defecto
+    - Al crear una tabla en SQL, puedes asignar valores predeterminados a sus columnas.
+      - **CREATE TABLE Productos (ID INTEGER PRIMARY KEY AUTOINCREMENT, Nombre TEXT, Precio INTEGER DEFAULT 10);**
+    - Ejemplo: ***insert into usuarios (nombre,apellido,email) values ('Lucía','Sánchez','luciasanchez@outlook.com');***
+## Borrado y modificación de registros
+  ### Borrar todos los registros de una tabla
+    - La cláusula DELETE se utiliza para eliminar registros de una tabla. Cuando se ejecuta la instrucción DELETE FROM nombre_tabla, se eliminan todos los registros de la tabla especificada.
+    - Ejemplo: ***delete from productos;***
 
+  ### Borrar un registro con where
+    - La sentencia DELETE se utiliza para eliminar datos de una tabla. Si queremos eliminar filas específicas en lugar de todos los datos de la tabla, podemos usar la cláusula WHERE junto con la sentencia DELETE.
+    - Ejemplo: ***delete from usuarios where id = 2;***
+  ###  Editar registros
+    - La sentencia UPDATE se utiliza para realizar modificaciones en datos ya existentes de una tabla.
+      - **UPDATE nombre_tabla SET nombre_columna = nuevo_valor**
+    - La instrucción UPDATE afecta todas las filas de la tabla, ya que no hemos utilizado la cláusula WHERE para establecer una condición de filtro.
+    - Ejemplo: ***update usuarios set registrado = true;***
+  ### Editar todos los registros utilizando where
+    - Ejemplo: ***update usuarios set telefono = '123-456' where id=4;***
+  ### Editar múltiples columnas
+    - En SQL es posible editar múltiples columnas de un registro utilizando la cláusula SET.
+    - Ejemplo: 
+      - ***update posts
+        set
+            titulo = 'Aprendiendo SQL',
+            contenido = 'SQL es un lenguaje de programación para gestionar bases de datos relacionales'
+        where
+            id = 1;***
+##
